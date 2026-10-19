@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-version="1.0.0">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6e6dc">
+  <meta name="description" content="A ten-page songbook for silly songs and videos.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Silly Songs">
+  <title>Silly Songs</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="./icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="preload" href="./fonts/fredoka-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app is-booting" id="app" data-save-state="booting">
+    <svg class="desk-note n1" viewBox="0 0 64 88" aria-hidden="true">
+      <ellipse cx="22" cy="70" rx="16" ry="11" transform="rotate(-24 22 70)"/>
+      <rect x="34" y="12" width="6.5" height="60" rx="3"/>
+      <path d="M40.5 14c22 4 36 16 34 30-14-4-24-14-34-24z"/>
+    </svg>
+    <svg class="desk-note n2" viewBox="0 0 88 80" aria-hidden="true">
+      <ellipse cx="18" cy="64" rx="14" ry="10" transform="rotate(-22 18 64)"/>
+      <ellipse cx="62" cy="58" rx="14" ry="10" transform="rotate(-22 62 58)"/>
+      <rect x="28" y="14" width="5" height="52" rx="2.5"/>
+      <rect x="72" y="8" width="5" height="52" rx="2.5"/>
+      <polygon points="28,14 77,8 77,18 28,24"/>
+    </svg>
+    <svg class="desk-note n3" viewBox="0 0 48 76" aria-hidden="true">
+      <ellipse cx="16" cy="60" rx="13" ry="9" transform="rotate(-22 16 60)"/>
+      <rect x="26" y="10" width="5" height="52" rx="2.5"/>
+    </svg>
+    <svg class="desk-note n4" viewBox="0 0 64 88" aria-hidden="true">
+      <ellipse cx="22" cy="70" rx="16" ry="11" transform="rotate(-24 22 70)"/>
+      <rect x="34" y="12" width="6.5" height="60" rx="3"/>
+      <path d="M40.5 14c22 4 36 16 34 30-14-4-24-14-34-24z"/>
+    </svg>
+
+    <header class="topbar">
+      <h1>
+        <svg class="logo-note" viewBox="0 0 64 88" aria-hidden="true">
+          <ellipse cx="22" cy="70" rx="16" ry="11" transform="rotate(-24 22 70)"/>
+          <rect x="34" y="12" width="6.5" height="60" rx="3"/>
+          <path d="M40.5 14c22 4 36 16 34 30-14-4-24-14-34-24z"/>
+        </svg>
+        <span>Silly Songs</span>
+      </h1>
+      <p class="sr" id="page-status" aria-live="polite"></p>
+      <a class="mum" id="mum" href="mailto:gulcin.yildirim@clickhouse.com?subject=Silly%20Songs%20feedback%20(v1.0.0%2C%20page%201)&amp;body=App%3A%20Silly%20Songs%0AVersion%3A%201.0.0%0APage%3A%201%0A%0AWhat%20happened%3A%0A%0A">Send to Mum</a>
+    </header>
+
+    <div class="picker-wrap">
+      <button class="nav prev" type="button" id="prev" aria-label="Previous page" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5 L7.5 12 l7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="picker" role="tablist" aria-label="Song pages">
+        <button role="tab" id="tab-1" type="button" aria-selected="true" aria-controls="sheet" aria-label="Page 1">1</button>
+        <button role="tab" id="tab-2" type="button" aria-selected="false" aria-controls="sheet" aria-label="Page 2">2</button>
+        <button role="tab" id="tab-3" type="button" aria-selected="false" aria-controls="sheet" aria-label="Page 3">3</button>
+        <button role="tab" id="tab-4" type="button" aria-selected="false" aria-controls="sheet" aria-label="Page 4">4</button>
+        <button role="tab" id="tab-5" type="button" aria-selected="false" aria-controls="sheet" aria-label="Page 5">5</button>
+        <button role="tab" id="tab-6" type="button" aria-selected="false" aria-controls="sheet" aria-label="Page 6">6</button>
+        <button role="tab" id="tab-7" type="button" aria-selected="false" aria-controls="sheet" aria-label="Page 7">7</button>
+        <button role="tab" id="tab-8" type="button" aria-selected="false" aria-controls="sheet" aria-label="Page 8">8</button>
+        <button role="tab" id="tab-9" type="button" aria-selected="false" aria-controls="sheet" aria-label="Page 9">9</button>
+        <button role="tab" id="tab-10" type="button" aria-selected="false" aria-controls="sheet" aria-label="Page 10">10</button>
+      </div>
+      <button class="nav next" type="button" id="next" aria-label="Next page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5 L16.5 12 l-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <main class="stage">
+      <article class="sheet" id="sheet" role="tabpanel" aria-labelledby="tab-1">
+        <div class="binding" aria-hidden="true"></div>
+        <div class="paper" id="paper" data-font="rounded">
+          <svg class="ornament" viewBox="0 0 88 80" aria-hidden="true">
+            <ellipse cx="18" cy="64" rx="14" ry="10" transform="rotate(-22 18 64)"/>
+            <ellipse cx="62" cy="58" rx="14" ry="10" transform="rotate(-22 62 58)"/>
+            <rect x="28" y="14" width="5" height="52" rx="2.5"/>
+            <rect x="72" y="8" width="5" height="52" rx="2.5"/>
+            <polygon points="28,14 77,8 77,18 28,24"/>
+          </svg>
+          <p class="boot" id="boot">Opening your songbook…</p>
+          <div class="paper-body" id="paper-body">
+            <input id="title" class="title-input" aria-label="Song title" placeholder="Song title" maxlength="120" autocomplete="off" autocapitalize="sentences" spellcheck="false" disabled>
+            <textarea id="lyrics" aria-label="Lyrics" placeholder="Write your silly lyrics here…" autocomplete="off" autocapitalize="sentences" spellcheck="false" disabled></textarea>
+            <div class="clips" id="clips" hidden></div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="tools">
+      <div class="fonts" role="group" aria-label="Lettering">
+        <button type="button" data-font="rounded" aria-pressed="true">Round</button>
+        <button type="button" data-font="hand" aria-pressed="false">Hand</button>
+        <button type="button" data-font="story" aria-pressed="false">Story</button>
+      </div>
+      <div class="colours" role="group" aria-label="Ink colour">
+        <button type="button" class="swatch" data-color="#5c3d8f" aria-label="Purple ink" aria-pressed="true"></button>
+        <button type="button" class="swatch" data-color="#a61e4d" aria-label="Berry ink" aria-pressed="false"></button>
+        <button type="button" class="swatch" data-color="#0f6e6b" aria-label="Teal ink" aria-pressed="false"></button>
+        <button type="button" class="swatch" data-color="#c4511a" aria-label="Orange ink" aria-pressed="false"></button>
+        <button type="button" class="swatch" data-color="#24366b" aria-label="Navy ink" aria-pressed="false"></button>
+      </div>
+      <div class="actions">
+        <label class="video-tool">
+          Add a video
+          <input id="video-input" type="file" accept="video/*" aria-label="Add a video">
+        </label>
+        <button type="button" id="save-photos">Save to Photos</button>
+      </div>
+    </footer>
+  </div>
+
+  <div class="save-layer" id="save-layer" hidden>
+    <div class="save-card" role="dialog" aria-modal="true" aria-labelledby="save-title">
+      <h2 id="save-title">Save to Photos</h2>
+      <p class="save-help" id="save-help">A picture of this page’s words, and any videos on it.</p>
+      <button type="button" id="save-picture">Save page picture</button>
+      <div class="save-videos" id="save-videos"></div>
+      <a class="mum" id="mum-dialog" href="mailto:gulcin.yildirim@clickhouse.com?subject=Silly%20Songs%20feedback%20(v1.0.0%2C%20page%201)&amp;body=App%3A%20Silly%20Songs%0AVersion%3A%201.0.0%0APage%3A%201%0A%0AWhat%20happened%3A%0A%0A">Send to Mum</a>
+      <button type="button" id="save-close">Close</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+  <script src="./app.js" type="module"></script>
+</body>
+</html>

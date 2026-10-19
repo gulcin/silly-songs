@@ -1,0 +1,15 @@
+{
+  "name": "silly-songs",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A ten-page songbook for silly songs and videos.",
+  "scripts": {
+    "start": "node scripts/static.mjs",
+    "test": "playwright test",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1"
+  }
+}
